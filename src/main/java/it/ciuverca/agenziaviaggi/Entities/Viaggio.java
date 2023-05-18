@@ -1,9 +1,8 @@
 package it.ciuverca.agenziaviaggi.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 public class Viaggio {
@@ -16,6 +15,8 @@ public class Viaggio {
     private int durataGiorni;
     private double prezzoPersona;
     private String foto; //Stringa che contiene il path della foto
+    @OneToMany(mappedBy = "viaggio")
+    private Set<Prenotazioni> prenotazione;
 
     public Viaggio(int id, String destinazione, String descrizione, int durataGiorni, double prezzoPersona, String foto) {
         this.id = id;
