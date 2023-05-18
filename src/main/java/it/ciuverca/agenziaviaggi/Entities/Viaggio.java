@@ -11,9 +11,32 @@ public class Viaggio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String destinazione;
+    private String descrizione;
+
     private int durataGiorni;
     private double prezzoPersona;
-    private String foto;
+    private String foto; //Stringa che contiene il path della foto
+
+    public Viaggio(int id, String destinazione, String descrizione, int durataGiorni, double prezzoPersona, String foto) {
+        this.id = id;
+        this.destinazione = destinazione;
+        this.descrizione = descrizione;
+        this.durataGiorni = durataGiorni;
+        this.prezzoPersona = prezzoPersona;
+        this.foto = foto;
+    }
+
+    public Viaggio() {
+
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
 
     public String getFoto() {
         return foto;

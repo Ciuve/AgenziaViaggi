@@ -16,6 +16,17 @@ public class Utente {
     @Enumerated(EnumType.STRING)
     private tipoUtente tipoUtente;
 
+    public Utente(int id, String username, String password, it.ciuverca.agenziaviaggi.Entities.tipoUtente tipoUtente) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.tipoUtente = tipoUtente;
+    }
+
+    public Utente() {
+
+    }
+
     public int getId() {
         return id;
     }
