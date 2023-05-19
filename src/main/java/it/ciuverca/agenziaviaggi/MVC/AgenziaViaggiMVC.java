@@ -1,5 +1,6 @@
 package it.ciuverca.agenziaviaggi.MVC;
 
+import it.ciuverca.agenziaviaggi.Entities.Utente;
 import it.ciuverca.agenziaviaggi.Entities.Viaggio;
 import it.ciuverca.agenziaviaggi.services.ViaggioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class AgenziaViaggiMVC {
     @Autowired
     ViaggioService service;
 
+
     @GetMapping("viaggi")
     public String getViaggio(Model m){
         m.addAttribute("viaggi", service.getViaggio());
@@ -27,4 +29,15 @@ public class AgenziaViaggiMVC {
         service.addViaggio(viaggio);
         return "viaggi";
     }
+
+    @GetMapping("zonaAdmin")
+    public String getZonaAdmin(Model m){
+        m.addAttribute("zonaAdmin", service.getUtente());
+        return "zonaAdmin";
+    }
+    /*@PostMapping("zonaAdmin")
+    public String addZonaAdmin(){
+        //service.addUtente(utente);
+        return "zonaAdmin";
+    }*/
 }
