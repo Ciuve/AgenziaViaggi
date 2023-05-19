@@ -12,7 +12,7 @@ public class Prenotazioni {
 
     @ManyToOne
     @MapsId("id_cliente")
-    @JoinColumn(name = "id_studente")
+    @JoinColumn(name = "id_cliente")
     private  Cliente cliente;
 
     @ManyToOne
