@@ -18,13 +18,13 @@ public class AgenziaViaggiMVC {
 
     @GetMapping("viaggi")
     public String getViaggio(Model m){
-        m.addAttribute("lista", service.getViaggio());
-        return "lista";
+        m.addAttribute("viaggi", service.getViaggio());
+        return "viaggi";
     }
 
     @PostMapping("viaggi")
     public String addViaggio(Viaggio viaggio){
         service.addViaggio(viaggio);
-        return "lista";
+        return "viaggi";
     }
 }
